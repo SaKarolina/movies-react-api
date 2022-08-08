@@ -6,7 +6,7 @@ function Header() {
     return (
         <header className="app-header">
             <h1>
-                <Link to="/">
+                <Link to="/movies-react-api">
                     Movies
                     <span style={{ textTransform: "lowercase", color: "#f6b52a" }}>
                         .logo

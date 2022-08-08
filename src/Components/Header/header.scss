@@ -48,7 +48,7 @@
             justify-content: flex-end;
             align-items: center;
             position: relative;
-
+            z-index: 100;
             @media screen and (max-width: 710px) {
                 flex-direction: column;
                 height: auto;
@@ -113,7 +113,7 @@
         padding: 5px;
         background-color: transparent;
         border: none;
-
+        z-index: 101;
         @media screen and (max-width: 710px) {
             display: block;
         }
