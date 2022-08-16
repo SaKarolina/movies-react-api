@@ -8,7 +8,7 @@ function Trending() {
   const [weekTrends, setWeekTrends] = useState([]);
 
   const getTrending = () => {
-    fetch('https://api.themoviedb.org/3/trending/all/week?api_key=9207b7bb9ad666f628ccc02d8fdd966e')
+    fetch(`https://api.themoviedb.org/3/trending/all/day?api_key=${process.env.REACT_APP_MOVIE_KEY}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

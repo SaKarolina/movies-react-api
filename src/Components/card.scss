@@ -7,6 +7,7 @@
     justify-content: center;
     align-items: center;
     gap: 10px;
+
     .item-row {
         width: 310px;
         max-height: 230px;
@@ -20,16 +21,19 @@
         gap: 10px;
         color: #5a5862;
         cursor: pointer;
+
         @media screen and (max-width: 400px) {
             width: 290px;
             max-height: 200px;
         }
+
         .filler-poster,
         .img {
             background-color: #e7dfccb8;
             border-radius: 5px;
             width: 150px;
             height: 226px;
+
             @media screen and (max-width: 400px) {
                 max-width: 135px;
                 max-height: 197px;
@@ -47,12 +51,24 @@
             justify-content: center;
             align-items: center;
             flex-wrap: wrap;
+
+            .title {
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                width: 100%;
+                overflow: hidden;
+                text-align: justify;
+                text-align-last: center;
+            }
+
             .vote {
                 margin-top: 5px;
                 display: flex;
                 flex-direction: row;
                 gap: 5px;
             }
+
             .type {
                 margin-top: 5px;
                 padding: 1px 3px;
@@ -60,6 +76,7 @@
             }
         }
     }
+
     .item-row:hover {
         background-color: #343434;
         transition: 0.5s;

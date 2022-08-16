@@ -8,6 +8,7 @@ import Series from "./Components/Header/Series";
 import Search from "./Components/Header/Search";
 import Favorites from "./Components/Header/Favorites";
 import NotFound from "./Components/NotFound";
+import Genres from "./Components/Header/Genres";
 // import { Container } from '@mui/material';
 
 
@@ -16,6 +17,7 @@ function App() {
     <BrowserRouter>
       <div className="app">
         <Header/>
+        <Genres/>
         {/* <Container> */}
             <Routes>
                 <Route path="/movies-react-api" element={<Trending></Trending>} />

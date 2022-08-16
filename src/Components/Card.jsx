@@ -14,7 +14,7 @@ const Card = ({
         <li className="item-row" id={id}>
             {poster ? (<img className='img' src={`https://image.tmdb.org/t/p/w200${poster}`} alt="movie_img"></img>) : (<div className="filler-poster"></div>)}
             <div className='info'>
-                <span style={{ fontWeight: '900', textAlign: 'center' }}>{title}</span>
+                <span className="title" style={{ fontWeight: '900', textAlign: 'center' }}>{title}</span>
                 <span style={{ marginTop: "20px" }}>{date ? date.substring(0, 4) : '-'}</span>
                 <div className="vote">
                     <img className='starImg' style={{ width: '20px', heigth: '20px' }} src={star} alt='star'></img>

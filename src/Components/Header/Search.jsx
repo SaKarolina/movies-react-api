@@ -12,7 +12,7 @@ function Search() {
   const findData = (e) => {
     setSearch(e.target.value);
     if(e.target.value.length >= 2) {
-      fetch(`https://api.themoviedb.org/3/search/movie?api_key=9207b7bb9ad666f628ccc02d8fdd966e&language=en-US&query=${e.target.value}`
+      fetch(`https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_MOVIE_KEY}&language=en-US&query=${e.target.value}`
       )
       .then(res => res.json())
       .then((data) => {
