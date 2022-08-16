@@ -2,15 +2,18 @@ import { useEffect, useState } from 'react';
 import Card from '../Card';
 import Genres from './Genres';
 import '../../app.scss';
+import AppPagination from '../Pagination/AppPagination';
 
 function Movies() {
 
   const [movies, setMovies] = useState([]);
+  const [page, setPage] = useState(1);
 
   const getMovies = () => {
-    fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_MOVIE_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate`)
+    fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_MOVIE_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=true&page=${page}`)
       .then((res) => res.json())
       .then((data) => {
+        console.log(data);
         const dataCopy = data.results;
         if (dataCopy !== null) {
           setMovies(dataCopy);
@@ -21,7 +24,7 @@ function Movies() {
 
   useEffect(() => {
     getMovies();
-  }, []);
+  }, [page]);
 
   return (
     <>
@@ -44,6 +47,7 @@ function Movies() {
           ))}
       </ul>
     </div>
+    <AppPagination setPage={setPage}></AppPagination>
     </>
   )
 }

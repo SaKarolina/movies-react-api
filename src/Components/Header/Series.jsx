@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import Card from '../Card';
+import AppPagination from '../Pagination/AppPagination';
 import Genres from './Genres';
 
 function Series() {
   const [series, setSeries] = useState([]);
+  const [page, setPage] = useState(1);
 
   const getSeries = () => {
-    fetch(`https://api.themoviedb.org/3/discover/tv?api_key=${process.env.REACT_APP_MOVIE_KEY}&language=en-US&sort_by=popularity.desc&page=1&timezone=America%2FNew_York&include_null_first_air_dates=false&with_watch_monetization_types=flatrate&with_status=0&with_type=0`)
+    fetch(`https://api.themoviedb.org/3/discover/tv?api_key=${process.env.REACT_APP_MOVIE_KEY}&language=en-US&sort_by=popularity.desc&page=${page}&timezone=America%2FNew_York&include_null_first_air_dates=false&with_watch_monetization_types=flatrate&with_status=0&with_type=0`)
       .then((res) => res.json())
       .then((data) => {
         const dataCopy = data.results;
@@ -19,7 +21,8 @@ function Series() {
 
   useEffect(() => {
     getSeries();
-  }, []);
+  }, [page]);
+
   return (
     <>
     <Genres></Genres>
@@ -40,6 +43,7 @@ function Series() {
             />
           ))}
       </ul>
+    <AppPagination setPage={setPage}></AppPagination>
     </div>
     </>
   )

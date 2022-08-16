@@ -1,6 +1,6 @@
 .front-list-container {
     margin-top: 20px;
-    padding: 5px 15px 7rem 15px;
+    padding: 5px 15px 4rem 15px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -74,8 +74,8 @@
             }
 
             .type {
-                margin-top: 15px;
-                padding: 1px 3px;
+                margin-top: 10px;
+                padding: 1px 3px 2px 3px;
                 font-size: 0.9em;
                 font-weight: 600;
                 text-transform: capitalize; 
@@ -83,10 +83,13 @@
                 border: 1px solid rgb(220, 144, 12);
                 border-radius: 4px;
                 background-color: rgb(210, 156, 30);
+                @media screen and (max-width: 400px) {
+                    font-size: 0.7em;
+                }
             }
 
             .watchBtn {
-                padding: 2px 9px;
+                padding: 3px 9px 2px 9px;
                 font-size: 0.7em;
             }
         }
