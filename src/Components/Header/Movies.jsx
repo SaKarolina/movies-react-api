@@ -37,7 +37,7 @@ function Movies() {
               poster={movie.poster_path}
               title={movie.title || movie.name}
               date={movie.first_air_date || movie.release_date}
-              media_type={movie.media_type}
+              media_type='Movie'
               vote_average={movie.vote_average}
               votes={movie.vote_count}
             />

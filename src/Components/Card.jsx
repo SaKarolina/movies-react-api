@@ -1,5 +1,6 @@
 import "./card.scss";
 import star from '../Images/star.svg';
+import { Button } from "@mui/material";
 
 const Card = ({
     id,
@@ -23,7 +24,8 @@ const Card = ({
                         <p style={{ fontSize: '10px', color: '#a4a4a4' }}>{votes} votes</p>
                     </div>
                 </div>
-                <span className="type" style={{ fontSize: '15px', color: '#a4a4a4', marginTop: "15px"  }}>{media_type === "tv" ? `${media_type} show` : media_type}</span>
+                <span className="type">{media_type === "tv" ? `${media_type} series` : media_type}</span>
+                <Button className="watchBtn" variant="outlined" color="success" size="small">Watch Trailer</Button>
             </div>
         </li>
     );

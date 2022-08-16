@@ -41,16 +41,20 @@
         }
 
         .info {
-            margin-top: 10px;
             color: #d4d4d4;
             font-size: 15px;
             letter-spacing: 1px;
             width: 46%;
+            height: 226px;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: space-evenly;
             align-items: center;
             flex-wrap: wrap;
+            @media screen and (max-width: 400px) {
+                height: 197px;
+                width: 42%;
+            }
 
             .title {
                 display: -webkit-box;
@@ -70,9 +74,20 @@
             }
 
             .type {
-                margin-top: 5px;
+                margin-top: 15px;
                 padding: 1px 3px;
-                border: 1px solid green;
+                font-size: 0.9em;
+                font-weight: 600;
+                text-transform: capitalize; 
+                color: #343434;
+                border: 1px solid rgb(220, 144, 12);
+                border-radius: 4px;
+                background-color: rgb(210, 156, 30);
+            }
+
+            .watchBtn {
+                padding: 2px 9px;
+                font-size: 0.7em;
             }
         }
     }
