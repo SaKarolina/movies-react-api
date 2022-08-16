@@ -8,28 +8,20 @@ import Series from "./Components/Header/Series";
 import Search from "./Components/Header/Search";
 import Favorites from "./Components/Header/Favorites";
 import NotFound from "./Components/NotFound";
-import Genres from "./Components/Header/Genres";
-// import { Container } from '@mui/material';
-
 
 function App() {
   return (
     <BrowserRouter>
       <div className="app">
         <Header/>
-        <Genres/>
-        {/* <Container> */}
             <Routes>
-                <Route path="/movies-react-api" element={<Trending></Trending>} />
-                <Route path="/movies" element={<Movies></Movies>} />
-                <Route path="/series" element={<Series></Series>} />
-                <Route path="/favorites" element={<Favorites></Favorites>} />
-                <Route path="/search" element={<Search></Search>} />
+                <Route path="trending" element={<Trending></Trending>} />
+                <Route path="movies" element={<Movies></Movies>} />
+                <Route path="series" element={<Series></Series>} />
+                <Route path="favorites" element={<Favorites></Favorites>} />
+                <Route path="search" element={<Search></Search>} />
                 <Route path='*' element={<NotFound></NotFound>}/>
             </Routes>
-        {/* </Container> */}
-
-        
         <Footer/>
       </div>
     </BrowserRouter>

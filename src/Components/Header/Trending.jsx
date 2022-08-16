@@ -11,7 +11,6 @@ function Trending() {
     fetch(`https://api.themoviedb.org/3/trending/all/day?api_key=${process.env.REACT_APP_MOVIE_KEY}`)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         const dataCopy = data.results;
         if (dataCopy !== null) {
           setWeekTrends(dataCopy);
