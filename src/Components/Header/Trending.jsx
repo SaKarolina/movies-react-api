@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import Card from "../Card";
 import '../../app.scss';
-import AppPagination from "../Pagination/AppPagination";
-
 
 function Trending() {
 
