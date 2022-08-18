@@ -6,6 +6,7 @@ import Genres from './Genres';
 function Series() {
   const [series, setSeries] = useState([]);
   const [page, setPage] = useState(1);
+  const [genres, setGenres] = useState([]);
 
   const getSeries = () => {
     fetch(`https://api.themoviedb.org/3/discover/tv?api_key=${process.env.REACT_APP_MOVIE_KEY}&language=en-US&sort_by=popularity.desc&page=${page}&timezone=America%2FNew_York&include_null_first_air_dates=false&with_watch_monetization_types=flatrate&with_status=0&with_type=0`)
@@ -25,7 +26,7 @@ function Series() {
 
   return (
     <>
-    <Genres></Genres>
+    <Genres genres={genres} setGenres={setGenres}></Genres>
     <div>
       <h1 className="pageTitle">TV Series</h1>
       <ul className="front-list-container">
