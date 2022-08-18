@@ -27,11 +27,11 @@ body {
     background-color: transparent;
     margin-bottom: 6rem;
     align-items: center;
-    .css-obv7nq-MuiButtonBase-root-MuiPaginationItem-root {
+    button {
         color: #d8d8d8;
         border: 1px solid #d8d8d81f;
     }
-    .css-obv7nq-MuiButtonBase-root-MuiPaginationItem-root:hover {
+    button:hover {
         background-color: #fdd83533;
     }
 }

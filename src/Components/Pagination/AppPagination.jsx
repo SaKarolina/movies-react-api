@@ -6,22 +6,22 @@ import { yellow } from '@mui/material/colors';
 const theme = createTheme({
   palette: {
     primary: {
-      main: yellow[600],
+      main: yellow[600]
     },
   },
 });
 
 function AppPagination({ setPage}) {
 
-    const handleChange = (page) => {
-        setPage(page)
-        window.scroll(0,0)
+    const handleChange = (event, value) => {
+        setPage(value);
+        window.scroll(0,0);
     }
 
   return (
     <ThemeProvider theme={theme}>
     <Stack spacing={2} className="pagination">
-      <Pagination color="primary" variant="outlined" shape="rounded" onChange={(event) => handleChange(event.target.textContent)} count={200}/>
+      <Pagination color="primary" variant="outlined" shape="rounded" onChange={handleChange} count={200}/>
     </Stack>
     </ThemeProvider>
   )
