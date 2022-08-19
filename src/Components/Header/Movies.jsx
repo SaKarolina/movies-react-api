@@ -3,16 +3,19 @@ import Card from '../Card';
 import Genres from './Genres';
 import '../../app.scss';
 import AppPagination from '../Pagination/AppPagination';
+import genresIDs from '../../utils/genresID';
 
 function Movies() {
 
   const [movies, setMovies] = useState([]);
   const [page, setPage] = useState(1);
   const [genres, setGenres] = useState([]);
-  // console.log(genres);
+  const [choosedGenres, setChoosedGenres] = useState([]);
+
+  const genresIds = genresIDs(choosedGenres);
 
   const getMovies = () => {
-    fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_MOVIE_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=true&page=${page}`)
+    fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_MOVIE_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=true&page=${page}&with_genres=${genresIds}`)
       .then((res) => res.json())
       .then((data) => {
         // console.log(data);
@@ -26,11 +29,11 @@ function Movies() {
 
   useEffect(() => {
     getMovies();
-  }, [page]);
+  }, [page, choosedGenres]);
 
   return (
     <>
-    <Genres genres={genres} setGenres={setGenres}></Genres>
+    <Genres genres={genres} setGenres={setGenres} choosedGenres={choosedGenres} setChoosedGenres={setChoosedGenres}></Genres>
     <div>
       <h1 className="pageTitle">Movies</h1>
       <ul className="front-list-container">

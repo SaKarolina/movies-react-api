@@ -16,11 +16,17 @@ body {
 }
 
 .pageTitle {
-    margin-top: 20px;
+    margin-top: 10px;
     color: #d8d8d8;
+    background: #5B8B31;
+    background: -moz-linear-gradient(left, #5B8B31 0%, #689F38 50%, #5B8B31 100%);
+    background: -webkit-linear-gradient(left, #5B8B31 0%, #689F38 50%, #5B8B31 100%);
+    background: linear-gradient(to right, #5B8B31 0%, #689F38 50%, #5B8B31 100%);
     width: 100%;
     text-align: center;
     padding: 10px 40px;
+    letter-spacing: 2px;
+    cursor: default;
 }
 
 .pagination {
@@ -34,4 +40,14 @@ body {
     button:hover {
         background-color: #fdd83533;
     }
+}
+
+.genresContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 10vw;
+    width: 80vw;
 }
