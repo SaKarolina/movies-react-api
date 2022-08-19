@@ -2,14 +2,18 @@ import React, { useEffect, useState } from 'react'
 import Card from '../Card';
 import AppPagination from '../Pagination/AppPagination';
 import Genres from './Genres';
+import genresIDs from '../../utils/genresID';
 
 function Series() {
   const [series, setSeries] = useState([]);
   const [page, setPage] = useState(1);
   const [genres, setGenres] = useState([]);
+  const [choosedGenres, setChoosedGenres] = useState([]);
+
+  const genresIds = genresIDs(choosedGenres);
 
   const getSeries = () => {
-    fetch(`https://api.themoviedb.org/3/discover/tv?api_key=${process.env.REACT_APP_MOVIE_KEY}&language=en-US&sort_by=popularity.desc&page=${page}&timezone=America%2FNew_York&include_null_first_air_dates=false&with_watch_monetization_types=flatrate&with_status=0&with_type=0`)
+    fetch(`https://api.themoviedb.org/3/discover/tv?api_key=${process.env.REACT_APP_MOVIE_KEY}&language=en-US&sort_by=popularity.desc&page=${page}&timezone=America%2FNew_York&include_null_first_air_dates=false&with_watch_monetization_types=flatrate&with_status=0&with_type=0&with_genres=${genresIds}`)
       .then((res) => res.json())
       .then((data) => {
         const dataCopy = data.results;
@@ -22,11 +26,11 @@ function Series() {
 
   useEffect(() => {
     getSeries();
-  }, [page]);
+  }, [page, choosedGenres]);
 
   return (
     <>
-    <Genres genres={genres} setGenres={setGenres}></Genres>
+    <Genres genres={genres} setGenres={setGenres} choosedGenres={choosedGenres} setChoosedGenres={setChoosedGenres}></Genres>
     <div>
       <h1 className="pageTitle">TV Series</h1>
       <ul className="front-list-container">
