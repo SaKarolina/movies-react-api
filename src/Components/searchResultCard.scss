@@ -1,0 +1,58 @@
+.card-container {
+    margin-top: 0px;
+    .result-card {
+        background-color: #dbdada;
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+        align-items: center;
+        width: 70vw;
+        padding: 20px;
+        gap: 30px;
+        @media (max-width: 820px) {
+            flex-direction: column;
+        }
+        .poster-wrapper img,
+        .filler-poster {
+            width: 250px;
+            height: 350px;
+            background-color: #dbdada;
+            display: block;
+            color: transparent;
+            @media (max-width: 465px) {
+                width: 200px;
+                height: 300px;
+            }
+        }
+        .info-SearchCard {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 9px;
+            .language-SearchCard {
+                font-size: 13px;
+                font-style: italic;
+            }
+            .vote-SearchCard {
+                display: flex;
+                flex-direction: row;
+                gap: 10px;
+                font-size: 13px;
+            }
+            .starImg-SearchCard{
+                width: 24px;
+            }
+            .overview-SearchCard {
+                font-size: 14px;
+                line-height: 1.5em;
+                text-align: justify;
+            }
+            .watchBtn-SearchCard {
+                margin-top: 20px;
+            }
+            @media (max-width: 820px) {
+                align-items: center;
+            }
+        }
+    }
+}

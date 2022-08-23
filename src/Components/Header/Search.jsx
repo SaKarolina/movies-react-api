@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import ResultCard from '../ResultCard';
+import SearchResultCard from '../SearchResultCard';
 import ResultList from '../ResultList';
 import logo from '../../Images/movie.svg';
 import "./search.scss";
@@ -43,7 +43,7 @@ function Search() {
         <input type='search' name='search' id='search' placeholder='Search for a movie...' value={search} onChange={findData}/>
       </div>
 
-      <div className="front-list-container">
+      <div className="front-list-container card-container">
         <div className='movies-list'>
           <ul className='results' >
             {results.length > 0 ? 
@@ -55,11 +55,11 @@ function Search() {
             : ''}     
           </ul>
         </div>
+      {
+        selected && <SearchResultCard movie={selected}></SearchResultCard>
+      }
       </div>
       
-      {
-        selected && <ResultCard movie={selected}></ResultCard>
-      }
     </div>
   )
 }
