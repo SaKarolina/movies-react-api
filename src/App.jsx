@@ -9,6 +9,7 @@ import Search from "./Components/Header/Search";
 import Favorites from "./Components/Header/Favorites";
 
 function App() {
+
   return (
     <BrowserRouter>
       <div className="app">

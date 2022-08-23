@@ -2,7 +2,10 @@ import React from 'react'
 
 function Favorites() {
   return (
-    <div style={{color: 'red'}}>Favorites</div>
+    <div>
+      <h1 className="pageTitle">My Favorites</h1>
+
+    </div>
   )
 }
 

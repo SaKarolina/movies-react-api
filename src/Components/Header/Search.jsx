@@ -36,21 +36,25 @@ function Search() {
 
   return (
     <div className='app' onClick={close}>
+      <h1 className="pageTitle">Search</h1>
+      
       <div className='search'>
       <img className='logo' src={logo} alt='logo'/>
-        <input type='search' name='search' id='search' placeholder='Search for a movie' value={search} onChange={findData}/>
+        <input type='search' name='search' id='search' placeholder='Search for a movie...' value={search} onChange={findData}/>
       </div>
 
-      <div className='movies-list'>
-        <ul className='results' >
-          {results.length > 0 ? 
-            results.slice(0, 8).map(movie => (
-              <li key={movie.id}>
-                <ResultList movie={movie} selectedMovie={selectedMovie}></ResultList>
-              </li>
-            ))
-          : ''}     
-        </ul>
+      <div className="front-list-container">
+        <div className='movies-list'>
+          <ul className='results' >
+            {results.length > 0 ? 
+              results.slice(0, 9).map(movie => (
+                <li key={movie.id}>
+                  <ResultList movie={movie} selectedMovie={selectedMovie}></ResultList>
+                </li>
+              ))
+            : ''}     
+          </ul>
+        </div>
       </div>
       
       {

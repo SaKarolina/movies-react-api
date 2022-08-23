@@ -14,7 +14,7 @@ ul {
     justify-content: center;
     align-items: center;
     background: transparent;
-    padding: 10px 40px;
+    padding: 15px 40px;
     box-shadow: 0px 5px 11px -5px rgba(0, 0, 0, 0.373);
     .logo {
         position: absolute;
@@ -22,26 +22,30 @@ ul {
         top: 50%;
         left: 26.5%;
         transform: translate(-50%, -50%);
-        padding-left: 12px;
+        padding-left: 15px;
         width: 2.5em;
-        filter: invert(100%) sepia(2%) saturate(1726%) hue-rotate(244deg) brightness(114%) contrast(74%);
+        filter: brightness(0) saturate(100%) invert(32%) sepia(17%) saturate(18%) hue-rotate(348deg) brightness(96%) contrast(86%);
+        @media screen and (max-width: 1150px) {
+            left: 27%;
+        }
         @media screen and (max-width: 720px) {
             display: none;
         }
     }
     input[type="search"] {
-        background-color: #ffffff31;
+        background-color: #ffffffd2;
         border: 1px inset #525251;
-        border-radius: 5px;
+        border-radius: 20px;
         width: 50vw;
         height: 2.7em;
         padding-left: 3.5em;
+        padding-right: 1em;
         font-size: 15px;
         line-height: 1.5em;
-        color: #fff;
+        color: #585858;
         letter-spacing: 1px;
         outline: none;
-        background: linear-gradient(90deg, rgba(246, 181, 42, 0.797) 0%, rgba(199, 198, 187, 0.419) 52%, rgba(68, 68, 68, 0.54) 99%);
+        background: linear-gradient(90deg, rgba(255, 255, 255, 0.797) 0%, rgba(228, 228, 228, 0.817) 52%, rgba(184, 184, 184, 0.795) 99%);
         @media screen and (max-width: 720px) {
             padding-left: 1em;
         }
@@ -51,6 +55,36 @@ ul {
         background-color: #ffffff31;
     }
     input[type="search"]::placeholder {
-        color: #dedede;
+        color: rgb(88, 88, 88);
+        font-weight: 600;
+    }
+}
+.front-list-container {
+    .movies-list {
+        display: flex;
+        flex-direction: column;
+        justify-self: center;
+        align-items: stretch;
+        background-color: #f5f5f1;
+        border-radius: 20px;
+        box-shadow: 0px 5px 11px -5px rgb(255, 255, 255);
+        width: 50vw;
+        .movie {
+            padding: 12px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-self: left;
+            align-items: flex-start;
+            width: 100%;
+        }
+        .movie:hover {
+        border-radius: 20px;
+            background: #74B03E;
+            background: -moz-linear-gradient(left, #74B03E 0%, #6DA63B 50%, #5B8B31 100%);
+            background: -webkit-linear-gradient(left, #74B03E 0%, #6DA63B 50%, #5B8B31 100%);
+            background: linear-gradient(to right, #74B03E 0%, #6DA63B 50%, #5B8B31 100%);
+            // transition: 1s;
+            cursor: pointer;
+        }
     }
 }
